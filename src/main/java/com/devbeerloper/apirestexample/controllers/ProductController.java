@@ -3,6 +3,7 @@ package com.devbeerloper.apirestexample.controllers;
 import com.devbeerloper.apirestexample.domain.Product;
 import com.devbeerloper.apirestexample.domain.services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -15,8 +16,8 @@ public class ProductController {
     private ProductService productService;
 
     @GetMapping ("/all")
-    public List<Product> getAll () {
-        return productService.getAll();
+    public ResponseEntity<List<Product>> getAll () {
+        return new ResponseEntity<>(productService.getAll());
     }
 
     @GetMapping ("/{id}")
