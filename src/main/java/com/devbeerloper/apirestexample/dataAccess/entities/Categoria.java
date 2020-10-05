@@ -26,8 +26,18 @@ public class Categoria {
         this.idCategoria = idCategoria;
     }
 
+
     public String getDescripcion() {
         return descripcion;
+    }
+
+    public List<Producto> getProductos() {
+        return productos;
+    }
+
+
+    public void setProductos(List<Producto> productos) {
+        this.productos = productos;
     }
 
     public void setDescripcion(String descripcion) {
